@@ -2,27 +2,29 @@ import React, { useState } from "react";
 import Box from "./Box";
 import "./BoxContainer.css";
 
-const BoxContainer = () => {
-  const NUM_BOXES = 16;
-  const COLORS = ["red", "blue", "green", "yellow", "purple", "orange", "teal", "pink"];
-
+const BoxContainer = ({ numBoxes = 16, colors = ["red", "blue", "green", "yellow", "purple", "orange", "teal", "pink"] }) => {
   const [boxColors, setBoxColors] = useState(
-    Array.from({ length: NUM_BOXES }, () => COLORS[Math.floor(Math.random() * COLORS.length)])
+    Array.from({ length: numBoxes }, () => colors[Math.floor(Math.random() * colors.length)])
   );
 
+  const [changedIndex, setChangedIndex] = useState(null);
+
   const changeRandomBoxColor = () => {
-    const randomBoxIndex = Math.floor(Math.random() * NUM_BOXES); 
-    const randomColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+    const randomBoxIndex = Math.floor(Math.random() * numBoxes);
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
     const updatedColors = [...boxColors];
     updatedColors[randomBoxIndex] = randomColor;
+
     setBoxColors(updatedColors);
+    setChangedIndex(randomBoxIndex);
   };
 
   return (
     <div>
       <div className="BoxContainer">
         {boxColors.map((color, index) => (
-          <Box key={index} color={color} />
+          <Box key={index} color={color} isChanged={index === changedIndex} />
         ))}
       </div>
       <button className="change-btn" onClick={changeRandomBoxColor}>

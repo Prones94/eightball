@@ -4,3 +4,10 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+.changed-text {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px black;
+}

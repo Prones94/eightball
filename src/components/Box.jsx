@@ -1,10 +1,10 @@
 import React from 'react'
 import './Box.css'
 
-const Box = ({ color }) => {
+const Box = ({ color, isChanged }) => {
   return (
     <div className='Box' style={{ backgroundColor: color}}>
-    <p>Boxes</p>
+    {isChanged && <span className='changed-text'>changed!</span>}
     </div>
   )
 }
