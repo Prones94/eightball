@@ -1,0 +1,38 @@
+.EightBall {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.Eightball p {
+  margin: 0;
+  padding: 0 10px;
+}
+
+.reset-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.reset-btn:hover {
+  background-color: #0056b3;
+}
+
+.stats {
+  margin: 5px 0;
+}
