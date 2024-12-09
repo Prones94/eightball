@@ -1,0 +1,22 @@
+.BoxContainer {
+  display: grid;
+  grid-template-columns: repeat(4,100px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.change-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.change-btn:hover {
+  background-color: #0056b3;
+}
